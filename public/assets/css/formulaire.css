@@ -1,0 +1,643 @@
+
+/* Style global */
+
+/* Formulaire */
+main {
+    max-width: 700px; /* Largeur maintenue */
+    margin: 40px auto;
+    padding: 20px; /* Réduit le padding interne */
+    background-color: white;
+    border-radius: 8px; /* Coins arrondis légèrement réduits */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.container-title {
+    background-color: #f8f8f8; /* Couleur légèrement différente */
+    padding: 25px 0;
+    border-radius: 5px;
+}
+
+h1 {
+    font-family: 'Arial Black', sans-serif;
+    font-size: 1.8em; /* Taille ajustée */
+    color: #005A9C; /* Un bleu professionnel */
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    text-align: center;
+    text-decoration: underline; /* Ajoute un soulignement */
+}
+
+p.description {
+    font-size: 1.2em; /* Taille agréable à lire */
+    font-family: 'Verdana', sans-serif; /* Police professionnelle */
+    color: #333; /* Couleur sobre et élégante */
+    text-align: center; /* Aligné sous le titre */
+    margin-top: 10px; /* Espacement avec le titre */
+    font-style: italic; /* Apporte un effet raffiné */
+}
+
+
+
+/* 🔹 Correction pour la barre de progression */
+
+
+.progress-container {
+    width: 100%;
+    background-color: #f3f3f3;
+    border-radius: 5px;
+    padding: 5px;
+    position: relative;
+}
+
+.progress-bar {
+    width: 50%; /* Exemple à 50% */
+    height: 20px;
+    background: linear-gradient(45deg, #2196F3, #0D47A1);
+    border-radius: 5px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.progress-text {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+
+/* Étapes du formulaire */
+.form-step {
+    display: none;
+    padding: 15px; /* Réduction de l'espace interne */
+    animation: fadeIn 0.3s ease;
+}
+
+.form-step.active {
+    display: block;
+}
+
+/* Champs du formulaire */
+form fieldset {
+    border: none;
+    margin-bottom: 15px; /* Marges réduites */
+}
+
+form legend {
+    font-size: 1.8rem; /* Taille réduite pour les titres */
+    font-weight: bold;
+    margin-bottom: 15px; /* Moins d'espace entre les titres et les champs */
+    text-align: center;
+    color: #007bff; /* Couleur maintenue */
+}
+
+form label {
+    display: block;
+    margin-bottom: 6px; /* Moins d'espace entre le label et le champ */
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333;
+}
+
+form input,
+form select,
+form textarea {
+    width: 100%;
+    padding: 10px; /* Réduction du padding interne */
+    margin-bottom: 15px; /* Moins d'espace entre les champs */
+    border: 1px solid #ccc;
+    border-radius: 4px; /* Coins arrondis légèrement réduits */
+    font-size: 0.9rem; /* Taille légèrement réduite */
+    transition: border-color 0.3s ease;
+}
+
+form input:focus,
+form select:focus,
+form textarea:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Boutons */
+.next-btn,
+.prev-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px; /* Réduction de la taille des boutons */
+    border-radius: 5px; /* Coins légèrement réduits */
+    font-size: 0.9rem; /* Taille de la police réduite */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.next-btn:hover,
+.prev-btn:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+/* Bouton de validation */
+button[type="submit"] {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 12px 20px; /* Réduction de la taille */
+    border-radius: 5px;
+    font-size: 0.9rem; /* Taille légèrement réduite */
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+}
+
+.error {
+    border: 2px solid red;
+}
+
+.loader_formulaire {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+}
+
+.spinner_formulaire {
+    border: 5px solid transparent;
+    border-top: 5px solid #fff;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.loader_formulaire p {
+    color: #fff;
+    font-size: 18px;
+    margin-top: 10px;
+}
+.success-message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #dff0d8;
+    color: #3c763d;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+    z-index: 9999;
+}
+
+.icon-check {
+    font-size: 40px;
+    margin-bottom: 10px;
+    color: #3c763d;
+}
+
+.error-message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #f8d7da; /* Rouge clair */
+    color: #721c24; /* Rouge foncé */
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+    z-index: 9999;
+}
+
+.icon-error {
+    font-size: 40px;
+    margin-bottom: 10px;
+    color: #721c24;
+}
+
+.formulaire-modal {
+    position: fixed;
+    top: 50%; /* Position au centre */
+    left: 50%; /* Position au centre */
+    transform: translate(-50%, -50%); /* Ajuste pour bien centrer */
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    z-index: 9999;
+    text-align: center;
+    padding: 20px;
+}
+
+.formulaire-modal-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.modal-icon {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+
+#modal-success .modal-icon {
+    color: green;
+}
+
+#modal-error .modal-icon {
+    color: red;
+}
+
+button {
+    padding: 10px 20px;
+    background: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+#modal-mandatory {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fffbee; /* Fond légèrement jaune clair */
+    border: 2px solid #ffeeba;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    z-index: 10000; /* 🔹 Place la modale bien au-dessus du formulaire */
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
+    display: none; /* Masqué par défaut */
+}
+
+#modal-mandatory .modal-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#modal-mandatory .modal-icon {
+    font-size: 40px;
+    margin-bottom: 10px;
+    color: #856404; /* Jaune foncé */
+}
+
+/* Assurer qu'aucun container parent ne perturbe son affichage */
+.container-title,
+main {
+    position: relative; /* 🔹 Évite tout impact sur la modale */
+    z-index: 1; /* 🔹 Assure que le formulaire n'interfère pas */
+}
+
+
+
+
+button.mandatory-button {
+    background: #856404;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+button.mandatory-button:hover {
+    background: #614c02;
+}
+
+.preloader {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: #ffffff;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.preloader-deactivate {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.8s ease-out, visibility 0.8s ease-out;
+}
+.error {
+    border: 2px solid red;
+    background-color: #ffe6e6;
+}
+.custom-dropdown {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+.dropdown-toggle {
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+}
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    width: 100%;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.dropdown-menu li {
+    padding: 12px;
+    cursor: pointer;
+}
+.dropdown-menu li:hover {
+    background: #007bff;
+    color: white;
+}
+.custom-dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.custom-dropdown button {
+    cursor: pointer;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    padding: 12px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+/* Empêche les dropdowns d'agir comme des boutons */
+.custom-dropdown button:focus {
+    outline: none;
+}
+.recap-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.tab-link {
+    background: #ddd;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.tab-link.active {
+    background: #007bff;
+    color: white;
+    font-weight: bold;
+}
+
+.tab-page {
+    display: none;
+}
+
+.tab-page.active {
+    display: block;
+}
+
+
+#modal-recap {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: linear-gradient(135deg, rgba(25, 25, 112, 0.95), rgba(0, 0, 0, 0.9)); /* 🔹 Effet nuit élégante */
+    backdrop-filter: blur(12px); /* 🔹 Flou pour un effet premium */
+    width: 60%;
+    max-width: 700px;
+    max-height: 80vh;
+    overflow-y: auto;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4); /* 🔹 Ombre prononcée pour effet 3D */
+    z-index: 9999;
+    text-align: center;
+    padding: 25px;
+    opacity: 0;
+    transform: scale(0.8);
+    transition: opacity 0.5s ease-in-out, transform 0.4s ease-in-out;
+}
+
+/* ✅ Animation d’apparition */
+#modal-recap.show {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* ✅ Fond d'écran assombri exclusif pour cette modale */
+#modal-recap::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(8px);
+    z-index: -1;
+}
+
+/* ✅ Effet de fermeture fluide */
+#modal-recap.hide {
+    opacity: 0;
+    transform: scale(0.8);
+}
+
+/* ✅ Contour lumineux subtil pour démarquer la modale */
+#modal-recap {
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+/* 🔹 Permet de placer le check bien au-dessus du formulaire 
+.success_check {
+    font-size: 18px;
+    color: #28a745;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+    background: #f8f9fa;
+    border: 2px solid #28a745;
+    border-radius: 8px;
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 11000;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); 
+}
+*/
+.success-overlay {
+    display: none; /* ✅ Fond semi-transparent */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 9998;
+}
+
+.success_check {
+    display: none; /* ✅ Caché par défaut */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    background: white;
+    padding: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    text-align: center;
+    z-index: 9999;
+}
+
+.success_check button {
+    margin-top: 15px;
+    padding: 8px 16px;
+    border: none;
+    background: #007bff;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.success_check button:hover {
+    background: #0056b3;
+}
+
+
+
+.orientation-modal-wrapper {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background-color: rgba(0,0,0,0.6);
+  backdrop-filter: blur(2px);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.orientation-modal-wrapper.show {
+  display: flex;
+}
+
+.orientation-modal-box {
+  background: white;
+  padding: 25px;
+  width: 90%;
+  max-width: 500px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+  animation: fadeIn 0.3s ease;
+}
+
+.orientation-modal-title {
+  text-align: center;
+  font-weight: bold;
+  font-size: 24px;
+  color: #2e2e2e;
+  margin-bottom: 10px;
+}
+
+.orientation-subtitle {
+  text-align: center;
+  font-size: 15px;
+  color: #666;
+  margin-bottom: 25px;
+  max-width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+
+
+.orientation-open-btn {
+  background-color: #1f3b5b;
+  color: #f5f5f5;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 0 8px rgba(31, 59, 91, 0.3);
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  animation: glowSoft 2.5s ease-in-out infinite;
+}
+
+.orientation-open-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 0 12px rgba(31, 59, 91, 0.5);
+}
+
+@keyframes glowSoft {
+  0%, 100% { box-shadow: 0 0 8px rgba(31, 59, 91, 0.3); }
+  50% { box-shadow: 0 0 14px rgba(31, 59, 91, 0.45); }
+}

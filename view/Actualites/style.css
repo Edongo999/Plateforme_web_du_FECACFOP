@@ -1,0 +1,423 @@
+.jobs-container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+
+.jobs-container .btn-lire, 
+.jobs-container .btn-postuler {
+    background-color: #007bff !important;
+    color: white !important;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+.actualite-card .btn {
+    background-color: #007bff !important;
+    color: white !important;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+/* Style des cartes pour chaque actualité */
+.actualite-card {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 350px;
+   
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeIn 0.6s ease-in-out; /* Animation d'apparition */
+}
+
+.actualite-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.actualite-media {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+
+.actualite-content {
+    padding: 15px;
+}
+
+.actualite-titre {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #333;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+
+.actualite-description {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 10px;
+    line-height: 1.6;
+    text-align: justify;
+    overflow: hidden; /* Empêche les débordements */
+    text-overflow: ellipsis; /* Ajoute des points de suspension si le texte est trop long */
+    white-space: nowrap; /* Force le texte sur une seule ligne */
+    max-height: 6em; /* Limite la hauteur pour éviter les débordements */
+    word-wrap: break-word; /* Coupe les mots longs si nécessaire */
+}
+@media (max-width: 480px) {
+    .actualite-description {
+        white-space: normal;
+        text-overflow: unset;
+        max-height: none;
+    }
+}
+
+/* Styles pour les longues descriptions */
+.hidden-content {
+    display: none; /* Par défaut, le texte caché est masqué */
+    color: #666;
+    margin-top: 5px;
+}
+
+.btn-toggle {
+    display: inline-block;
+    background-color: transparent;
+    border: none;
+    color: #007bff;
+    font-size: 0.9rem;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 0;
+    text-decoration: underline;
+    margin-top: 5px;
+}
+
+.btn-toggle:hover {
+    color: #0056b3;
+    text-decoration: none;
+}
+
+.actualite-date {
+    font-size: 0.9rem;
+    color: #999;
+    margin-bottom: 15px;
+    font-style: italic; /* Pour mettre en évidence la date */
+}
+
+/* Boutons des cartes */
+.btn {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+/* Animation des cartes */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animation pulsante pour les actualités récentes */
+.actualite-new {
+    animation: pulse 2s infinite;
+    color: #007bff;
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.7;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+/* Modals styling */
+.modal {
+    display: none; /* Caché par défaut */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Fond semi-transparent */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+/* Bouton pour fermer les modals */
+.modal-close-btn {
+    display: inline-block;
+    margin-top: 20px; /* Ajoute un espace au-dessus */
+    padding: 10px 20px;
+    background-color: #007bff; /* Bleu pour cohérence */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.modal-close-btn:hover {
+    background-color: #0056b3; /* Bleu sombre au survol */
+}
+
+/* Grille pour les actualités */
+.actualites {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Grille avec 4 colonnes */
+    gap: 20px; /* Espace entre les cartes */
+    justify-content: center;
+}
+@media (max-width: 1024px) {
+    .actualites {
+        grid-template-columns: repeat(2, 1fr); /* 2 colonnes pour les tablettes */
+    }
+}
+
+@media (max-width: 768px) {
+    .actualites {
+        grid-template-columns: repeat(1, 1fr); /* 1 colonne sur mobile */
+        justify-content: center; /* ✅ Centre la carte horizontalement */
+        display: flex; /* ✅ Active flexbox */
+        flex-direction: column; /* ✅ Organise les cartes en colonne */
+        align-items: center; /* ✅ Centre les cartes */
+    }
+}
+@media (max-width: 768px) {
+    .actualite-card {
+        width: 90%; /* ✅ La carte prend 90% de la largeur pour un bon rendu */
+        max-width: 400px; /* ✅ Empêche qu'elle soit trop large */
+    }
+}
+
+/* Contenu des modals */
+.modal h2 {
+    margin-top: 10px;
+    font-size: 1.8rem;
+    color: #333;
+}
+
+.modal p {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.6;
+    text-align: justify; /* Texte justifié */
+    margin-bottom: 20px;
+    overflow-wrap: break-word; /* Gérer les mots longs */
+}
+
+.modal img,
+.modal video {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+/* ✅ Fond animé responsive */
+.background {
+    width: 100%;
+    height: 100px; /* ✅ Taille ajustée */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to right, #0056b3, #003366); /* ✅ Dégradé dynamique */
+    position: relative;
+    overflow: hidden;
+    padding: 10px;
+}
+
+/* ✅ Styles spécifiques des boutons */
+.btn-lire, 
+.btn-postuler {
+    background: linear-gradient(to right, #0056b3, #003366); /* ✅ Dégradé dynamique */
+    color: white !important;
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease-in-out;
+    display: inline-block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+/* ✅ Effet au survol */
+.btn-lire:hover,
+.btn-postuler:hover {
+    background-color: #0056b3 !important;
+}
+
+@media (max-width: 480px) {
+    .btn-lire, .btn-postuler {
+        width: 100%;
+        padding: 12px;
+    }
+}
+.actualite-card .btn-lire, 
+.actualite-card .btn-postuler {
+    
+    background: linear-gradient(to right, #0056b3); /* ✅ Dégradé dynamique */
+    color: white !important;
+    padding: 10px 15px !important;
+    border-radius: 5px !important;
+    border: none !important;
+    font-size: 1rem !important;
+    cursor: pointer !important;
+    text-align: center !important;
+    transition: background-color 0.3s ease-in-out !important;
+    display: inline-block !important;
+    margin-top: 10px !important;
+    font-weight: bold !important;
+}
+.btn-lire, 
+.btn-postuler {
+    margin-top: 10px; /* ✅ Espacement au-dessus */
+    margin-bottom: 10px; /* ✅ Espacement en-dessous */
+    width: auto; /* ✅ Empêche qu’ils soient trop larges */
+}
+
+.actualite-content {
+    padding: 15px; /* ✅ Garde l'espacement normal */
+}
+
+.actualite-buttons {
+    display: flex; /* ✅ Active flex uniquement pour les boutons */
+    flex-direction: column; /* ✅ Organise les boutons en colonne */
+    align-items: center; /* ✅ Centre les boutons */
+    gap: 10px; /* ✅ Ajoute un espace entre les boutons */
+}
+
+.jobs-container .btn-lire, 
+.jobs-container .btn-postuler {
+    font-size: 1rem !important;
+    padding: 10px 15px !important;
+    border-radius: 5px !important;
+}
+/* ✅ Style du texte */
+#animated-title {
+    font-size: 1.8rem; /* ✅ Texte plus visible */
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block;
+    border-right: 3px solid white; /* ✅ Curseur clignotant */
+    animation: blink 0.7s infinite;
+}
+/* ✅ Adaptation pour les petits écrans */
+@media (max-width: 768px) {
+    #animated-title {
+        font-size: 1.8rem; /* ✅ Taille réduite pour mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    #animated-title {
+        font-size: 1.4rem; /* ✅ Ajustement pour très petits écrans */
+    }
+
+    .background {
+        height: 120px; /* ✅ Fond plus compact */
+    }
+}
+
+@media (max-width: 480px) {
+    #animated-title {
+        font-size: 1.2rem; /* ✅ Ajustement pour les petits écrans */
+        white-space: normal; /* ✅ Permet la coupure naturelle du texte */
+        overflow: visible; /* ✅ Empêche le texte d'être caché */
+        text-align: center; /* ✅ Centre le texte */
+    }
+}
+#animated-title {
+    display: inline-block;
+    animation: scrolling-text 10s linear infinite;
+}
+
+
+/* ✅ Style du texte */
+#animated-title-emploi {
+    font-size: 1.8rem; /* ✅ Texte plus visible */
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block;
+    border-right: 3px solid white; /* ✅ Curseur clignotant */
+    animation: blink 0.7s infinite;
+}
+/* ✅ Adaptation pour les petits écrans */
+@media (max-width: 768px) {
+    #animated-title-emploi {
+        font-size: 1.8rem; /* ✅ Taille réduite pour mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    #animated-title-emploi {
+        font-size: 1.4rem; /* ✅ Ajustement pour très petits écrans */
+    }
+
+    .background {
+        height: 120px; /* ✅ Fond plus compact */
+    }
+}
+
+@media (max-width: 480px) {
+    #animated-title-emploi {
+        font-size: 1.2rem; /* ✅ Ajustement pour les petits écrans */
+        white-space: normal; /* ✅ Permet la coupure naturelle du texte */
+        overflow: visible; /* ✅ Empêche le texte d'être caché */
+        text-align: center; /* ✅ Centre le texte */
+    }
+}
+#animated-title-emploi {
+    display: inline-block;
+    animation: scrolling-text 10s linear infinite;
+}
+
+
+

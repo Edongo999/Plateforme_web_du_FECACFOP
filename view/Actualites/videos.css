@@ -1,0 +1,172 @@
+
+
+
+/* ✅ Conteneur des actualités */
+.container-videoExclusive {
+    max-width: 1200px !important;
+    margin: 20px auto !important;
+    padding: 0 20px !important;
+}
+
+.actualites-videoExclusive {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 20px !important;
+    justify-content: center !important;
+}
+
+/* ✅ Style des cartes */
+.actualite-card-videoExclusive {
+    background: white !important;
+    border: 1px solid #ddd !important;
+    border-radius: 10px !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+    overflow: hidden !important;
+    width: 350px !important;
+    transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+    animation: fadeIn-videoExclusive 0.6s ease-in-out !important;
+}
+
+.actualite-card-videoExclusive:hover {
+    transform: translateY(-5px) !important;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* ✅ Style des vidéos */
+.actualite-media-videoExclusive {
+    width: 100% !important;
+    height: 200px !important;
+    object-fit: cover !important;
+    border-radius: 8px !important;
+}
+
+/* ✅ Contenu des cartes */
+.actualite-content-videoExclusive {
+    padding: 15px !important;
+}
+
+.actualite-titre-videoExclusive {
+    font-size: 1.5rem !important;
+    margin-bottom: 10px !important;
+    color: #333 !important;
+    font-weight: bold !important;
+    text-transform: capitalize !important;
+}
+
+.actualite-date-videoExclusive {
+    font-size: 0.9rem !important;
+    color: #999 !important;
+    margin-bottom: 15px !important;
+    font-style: italic !important;
+}
+
+.actualite-description-videoExclusive {
+    font-size: 1rem !important;
+    color: #666 !important;
+    margin-bottom: 10px !important;
+    line-height: 1.6 !important;
+    text-align: justify !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+    max-height: 6em !important;
+    word-wrap: break-word !important;
+}
+
+/* ✅ Bouton "Lire plus" */
+.btn-primary-videoExclusive {
+    display: inline-block !important;
+    background-color: #007bff !important;
+    color: white !important;
+    padding: 10px 15px !important;
+    border-radius: 5px !important;
+    border: none !important;
+    font-size: 1rem !important;
+    cursor: pointer !important;
+    transition: background-color 0.3s ease-in-out !important;
+    font-weight: bold !important;
+}
+
+.btn-primary-videoExclusive:hover {
+    background-color: #0056b3 !important;
+}
+
+
+/* ✅ Styles du modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 128, 0.8);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    width: 80%;
+    max-width: 600px;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.modal-close-btn {
+    display: block;
+    margin: 20px auto 0;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.modal-close-btn:hover {
+    background-color: #0056b3;
+}
+.modal video {
+    max-width: 90%; /* ✅ La vidéo ne dépassera pas 90% du modal */
+    max-height: 500px; /* ✅ Limite la hauteur pour éviter un affichage trop grand */
+    display: block;
+    margin: 0 auto; /* ✅ Centre la vidéo */
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+/* ✅ Responsive : Ajustement pour les mobiles */
+@media (max-width: 768px) {
+    .actualites {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .actualite-card {
+        width: 90%;
+        max-width: 400px;
+    }
+}
+
+/* ✅ Animation d'apparition */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

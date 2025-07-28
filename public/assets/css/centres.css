@@ -1,0 +1,132 @@
+
+/* ✅ Conteneur des cartes */
+.centre-card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* ✅ Adaptabilité intelligente */
+    gap: 15px; /* ✅ Espacement optimisé */
+    justify-content: center;
+    margin-bottom: 20px; /* ✅ Crée un espace avant le footer */
+}
+
+/* ✅ Style des cartes */
+.centre-card {
+    width: 280px;
+    height: 280px; /* ✅ Taille équilibrée */
+    border-radius: 50%; /* ✅ Forme ronde */
+    background: white; /* ✅ Intérieur blanc */
+    border: 5px solid #0056b3; /* ✅ Contour bleu */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+/* ✅ Gestion des images */
+
+
+.centre-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* ✅ Ajuste l'image sans déformation */
+    border-radius: 50%;
+}
+
+
+/* ✅ Conteneur des cartes */
+
+.centre-card-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* ✅ Deux colonnes */
+    gap: 20px; /* ✅ Espacement optimisé */
+    justify-content: center;
+    text-align: center; /* ✅ Assure que le texte est bien centré */
+}
+
+/* ✅ Ajustement du titre sous chaque carte */
+
+/* ✅ Regrouper carte + titre */
+.centre-card-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 280px; /* ✅ Largeur identique à celle de la carte */
+}
+.centre-card-title {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: white; /* ✅ Texte blanc pour bien ressortir */
+    text-align: center;
+    background: #0056b3; /* ✅ Même couleur que le contour des cartes */
+    padding: 12px;
+    border-radius: 8px; /* ✅ Arrondi pour harmoniser avec la carte */
+    border: 2px solid #0056b3;
+    width: 100%;
+    min-height: 50px;
+    margin-top: 10px; /* ✅ Espacement sous la carte */
+}
+
+/* ✅ Ajustement du titre sous la carte */
+
+
+
+/* ✅ Adaptabilité mobile */
+@media (max-width: 768px) {
+    .centre-card-container {
+        grid-template-columns: repeat(1, 1fr); /* ✅ Passe à une seule colonne sur mobile */
+    }
+}
+/* ✅ Nom des centres bien centré sous le cercle */
+
+
+
+
+/* ✅ Bouton Postuler */
+.btn-postuler {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #ff9800;
+    color: white;
+    padding: 10px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+.btn-postuler:hover {
+    background: #e68900;
+}
+.container-title {
+    background-color: #f8f8f8; /* Couleur légèrement différente */
+    padding: 25px 0;
+    border-radius: 5px;
+}
+
+h6 {
+    font-family: 'Arial Black', sans-serif;
+    font-size: 1.8em; /* Taille ajustée */
+    color: #005A9C; /* Un bleu professionnel */
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    text-align: center;
+    text-decoration: underline; /* Ajoute un soulignement */
+}
+
+p.description {
+    font-size: 1.2em; /* Taille agréable à lire */
+    font-family: 'Verdana', sans-serif; /* Police professionnelle */
+    color: #333; /* Couleur sobre et élégante */
+    text-align: center; /* Aligné sous le titre */
+    margin-top: 10px; /* Espacement avec le titre */
+    font-style: italic; /* Apporte un effet raffiné */
+}
+
+
+

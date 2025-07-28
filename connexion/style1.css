@@ -1,0 +1,259 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #005BAC, #0072cc);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-container {
+  background: white;
+  padding: 40px 30px;
+  border-radius: 16px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);
+  width: 480px;
+  position: relative;
+   max-width: 90vw;
+}
+
+/* Transitions dynamiques */
+.login-form, .reset-form {
+  display: none;
+  animation: fadeSlide 0.6s ease forwards;
+}
+
+.login-form.active, .reset-form.active {
+  display: block;
+}
+
+@keyframes fadeSlide {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Champs */
+h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #333;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  font-size: 1em;
+  color: #333;
+  display: block;
+  margin-bottom: 5px;
+}
+
+input {
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1.05em;
+  outline: none;
+  transition: 0.3s;
+  padding: 14px 16px;
+}
+
+input:focus {
+  border-color: #0072cc;
+  box-shadow: 0 0 6px rgba(0, 114, 204, 0.4);
+}
+
+/* Groupe avec icône */
+.with-icon {
+  position: relative;
+}
+.with-icon .field-icon {
+  position: absolute;
+  top: 38px;
+  left: 10px;
+  font-size: 1.1em;
+  color: #aaa;
+}
+.with-icon input {
+  padding-left: 32px;
+}
+
+/* Icône œil */
+.password-group {
+  position: relative;
+}
+.toggle-password {
+  position: absolute;
+  top: 38px;
+  right: 10px;
+  font-size: 1.1em;
+  color: #777;
+  cursor: pointer;
+}
+.toggle-password:hover {
+  color: #005BAC;
+}
+
+.form-footer {
+  text-align: right;
+  margin-bottom: 20px;
+}
+
+.form-footer a {
+  font-size: 0.85em;
+  color: #005BAC;
+  text-decoration: none;
+}
+
+.btn {
+  width: 100%;
+  padding: 14px;
+  background: #005BAC;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1.05em;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #004080;
+  transform: scale(1.03);
+  box-shadow: 0 0 10px #0072cc55;
+}
+
+.separator {
+  text-align: center;
+  margin: 25px 0 15px;
+  font-size: 0.85em;
+  color: #777;
+}
+
+.social-login {
+  display: flex;
+  justify-content: space-around;
+}
+
+.social {
+  width: 40px;
+  height: 40px;
+  background: #eee;
+  color: #333;
+  border-radius: 50%;
+  font-size: 1.1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+  text-decoration: none;
+}
+
+.social:hover {
+  background: #005BAC;
+  color: white;
+}
+
+.reset-text {
+  text-align: center;
+  font-size: 0.9em;
+  margin-bottom: 20px;
+  color: #666;
+}
+.with-icon {
+  position: relative;
+}
+
+.field-icon {
+  position: absolute;
+  top: 38px;
+  left: 12px;
+  font-size: 1.1em;
+  color: #999;
+}
+
+.with-icon input {
+  padding-left: 34px;
+}
+
+.password-group .toggle-password {
+  position: absolute;
+  right: 12px;
+  top: 38px;
+  font-size: 1.2em;
+  cursor: pointer;
+  color: #777;
+  transition: 0.2s;
+}
+
+.toggle-password:hover {
+  color: #005BAC;
+}
+
+.social-login a i {
+  font-size: 1.2em;
+}
+.animated-title {
+  font-size: 2em;
+  font-weight: 600;
+  color: #005BAC;
+  text-align: center;
+  margin-bottom: 25px;
+  position: relative;
+  animation: slideFade 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+@keyframes slideFade {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animated-title::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background-color: #005BAC;
+  margin: 10px auto 0;
+  border-radius: 5px;
+  animation: growBar 0.5s ease-out 0.6s forwards;
+  opacity: 0;
+}
+
+@keyframes growBar {
+  from {
+    width: 0;
+    opacity: 0;
+  }
+  to {
+    width: 60px;
+    opacity: 1;
+  }
+}
+
+
+.reset-text {
+  font-size: 0.95em;
+  text-align: center;
+  color: #555;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}

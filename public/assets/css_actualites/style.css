@@ -1,0 +1,155 @@
+
+
+/* ✅ Fond animé responsive */
+.background {
+    width: 100%;
+    height: 100px; /* ✅ Taille ajustée */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to right, #0056b3, #003366); /* ✅ Dégradé dynamique */
+    position: relative;
+    overflow: hidden;
+    padding: 10px;
+}
+
+
+
+/* ✅ Fond animé avec un effet lumineux */
+.animated-container {
+    width: 100%;
+    height: 120px;
+    background: linear-gradient(135deg, #0056b3, #003366, #001f4d); /* Dégradé plus professionnel */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
+    padding: 15px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+}
+
+/* 🎯 Effet de lumière subtile */
+.animated-container::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 10%, rgba(255, 255, 255, 0) 70%);
+    opacity: 0.2;
+    pointer-events: none;
+}
+
+/* ✅ Titre animé avec un effet moderne */
+#animated-title {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    display: inline-block;
+    border-right: 3px solid white;
+    animation: blink 0.7s infinite, fadeIn 1.5s ease-in-out;
+}
+
+/* Animation de clignotement */
+@keyframes blink {
+    50% { border-color: transparent; }
+}
+
+/* Effet d’apparition en douceur */
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(-10px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+
+
+
+
+/* ✅ Style du texte */
+#animated-title-emploi {
+    font-size: 1.8rem; /* ✅ Texte plus visible */
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block;
+    border-right: 3px solid white; /* ✅ Curseur clignotant */
+    animation: blink 0.7s infinite;
+}
+/* ✅ Adaptation pour les petits écrans */
+@media (max-width: 768px) {
+    #animated-title-emploi {
+        font-size: 1.8rem; /* ✅ Taille réduite pour mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    #animated-title-emploi {
+        font-size: 1.4rem; /* ✅ Ajustement pour très petits écrans */
+    }
+
+    .background {
+        height: 120px; /* ✅ Fond plus compact */
+    }
+}
+
+@media (max-width: 480px) {
+    #animated-title-emploi {
+        font-size: 1.2rem; /* ✅ Ajustement pour les petits écrans */
+        white-space: normal; /* ✅ Permet la coupure naturelle du texte */
+        overflow: visible; /* ✅ Empêche le texte d'être caché */
+        text-align: center; /* ✅ Centre le texte */
+    }
+}
+#animated-title-emploi {
+    display: inline-block;
+    animation: scrolling-text 10s linear infinite;
+}
+/* Modals styling */
+.modal {
+    display: none; /* Caché par défaut */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Fond semi-transparent */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+/* Bouton pour fermer les modals */
+.modal-close-btn {
+    display: inline-block;
+    margin-top: 20px; /* Ajoute un espace au-dessus */
+    padding: 10px 20px;
+    background-color: #007bff; /* Bleu pour cohérence */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.modal-close-btn:hover {
+    background-color: #0056b3; /* Bleu sombre au survol */
+}

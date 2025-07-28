@@ -1,0 +1,244 @@
+  /* ✅ Conteneur des cartes */
+/* 📌 Conteneur des cartes */
+
+.centre-card-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* ✅ 4 cartes par ligne */
+    gap: 20px;
+    justify-content: center;
+}
+
+/* 🔹 Adaptation aux écrans plus petits */
+@media (max-width: 1024px) {
+    .centre-card-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .centre-card-container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+/* ✅ Style des cartes */
+.centre-card {
+    width: 420px; /* ✅ Modifie la largeur */
+    border-radius: 15px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: linear-gradient(to right, #0056b3, #003366); /* 🔥 Dégradé bleu */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* 🌟 Effet de survol */
+.centre-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* ✅ Gestion des images */
+.centre-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+/* ✅ Titre des centres */
+.centre-card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    color: #fff;
+    padding: 12px;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    text-transform: uppercase;
+}
+
+/* ✅ Spécialités */
+.specialites-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    border-radius: 8px;
+}
+
+/* 🌀 Défilement fluide des spécialités */
+.specialites-scroll {
+    display: flex;
+    gap: 12px;
+    white-space: nowrap;
+    animation: defilement 15s linear infinite;
+}
+
+.specialite-item {
+    background: #ff9800;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: bold;
+    display: inline-block;
+}
+
+/* 🎭 Animation */
+@keyframes defilement {
+    from { transform: translateX(100%); }
+    to { transform: translateX(-100%); }
+}
+
+/* ✅ Fixation des boutons en bas */
+.centre-card-body {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+}
+
+/* ✅ Espacement amélioré des boutons */
+.centre-card-footer {
+    margin-top: auto;
+    width: 100%;
+    text-align: center;
+    padding: 15px; /* Augmente l'espacement */
+    display: flex;
+    flex-direction: column;
+    gap: 12px; /* ✅ Espacement entre les boutons */
+}
+
+/* ✅ Ajustement du style des boutons */
+.btn-custom {
+    border-radius: 50px;
+    padding: 14px 22px; /* Augmente légèrement la taille */
+    font-size: 16px;
+    width: 90%;
+    display: block;
+    text-align: center;
+    transition: background 0.3s ease;
+}
+
+/* ✅ Animation au survol */
+.btn-info {
+    background: #2196F3;
+    color: white;
+}
+
+.btn-info:hover {
+    background: #1976D2;
+}
+
+.btn-success {
+    background: #4CAF50;
+    color: white;
+}
+
+.btn-success:hover {
+    background: #388E3C;
+}
+
+
+
+/* ✅ Correction des boutons */
+.centre-btn {
+    border-radius: 50px !important;
+    padding: 14px 22px !important;
+    font-size: 16px !important;
+    width: 90% !important;
+    display: block !important;
+    text-align: center !important;
+    transition: background 0.3s ease !important;
+    font-weight: bold !important;
+    border: none !important;
+}
+
+/* ✅ Bouton bleu */
+.centre-btn-info {
+    background: #2196F3 !important;
+    color: white !important;
+}
+
+.centre-btn-info:hover {
+    background: #1976D2 !important;
+}
+
+/* ✅ Bouton vert */
+.centre-btn-success {
+    background: #4CAF50 !important;
+    color: white !important;
+}
+
+.centre-btn-success:hover {
+    background: #388E3C !important;
+}
+
+
+
+
+ /* ✅ Fond animé responsive */
+.background {
+    width: 100%;
+    height: 100px; /* ✅ Taille ajustée */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to right, #0056b3, #003366); /* ✅ Dégradé dynamique */
+    position: relative;
+    overflow: hidden;
+    padding: 10px;
+}
+
+/* ✅ Style du texte */
+#animated-title {
+    font-size: 1.8rem; /* ✅ Texte plus visible */
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block;
+    border-right: 3px solid white; /* ✅ Curseur clignotant */
+    animation: blink 0.7s infinite;
+}
+
+/* ✅ Adaptation pour les petits écrans */
+@media (max-width: 768px) {
+    #animated-title {
+        font-size: 1.8rem; /* ✅ Taille réduite pour mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    #animated-title {
+        font-size: 1.4rem; /* ✅ Ajustement pour très petits écrans */
+    }
+
+    .background {
+        height: 120px; /* ✅ Fond plus compact */
+    }
+}
+
+/* ✅ Effet du curseur clignotant */
+@keyframes blink {
+    50% { border-color: transparent; }
+}
+
+/* ✅ Ajout d'une séparation stylisée */
+.footer-separator {
+    width: 100%;
+    height: 5px;
+    
+    box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.2); /* ✅ Ombre subtile */
+    margin-bottom: 40px; /* ✅ Espace avant le footer */
+}

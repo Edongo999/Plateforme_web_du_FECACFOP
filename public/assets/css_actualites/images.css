@@ -1,0 +1,276 @@
+
+@charset "UTF-8";
+.header-unique {
+    text-align: center !important;
+    background-color: #007bff !important;
+    color: white !important;
+    padding: 20px 0 !important;
+}
+
+.header-unique h1 {
+    margin: 0 !important;
+    font-size: 2.5rem !important;
+}
+
+.container-unique {
+    max-width: 1200px !important;
+    margin: 20px auto !important;
+    padding: 0 20px !important;
+}
+
+.actualites-unique {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 20px !important;
+    justify-content: center !important;
+}
+
+.actualite-card-unique {
+    background: white !important;
+    border: 1px solid #ddd !important;
+    border-radius: 10px !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+    overflow: hidden !important;
+    width: 350px !important;
+    transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+    animation: fadeIn-unique 0.6s ease-in-out !important;
+}
+
+.actualite-card-unique:hover {
+    transform: translateY(-5px) !important;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2) !important;
+}
+
+.actualite-media-unique {
+    width: 100% !important;
+    height: 200px !important;
+    object-fit: cover !important;
+}
+
+.actualite-content-unique {
+    padding: 15px !important;
+}
+
+.actualite-titre-unique {
+    font-size: 1.5rem !important;
+    margin-bottom: 10px !important;
+    color: #333 !important;
+    font-weight: bold !important;
+    text-transform: capitalize !important;
+}
+
+.actualite-date-unique {
+    font-size: 0.9rem !important;
+    color: #999 !important;
+    margin-bottom: 15px !important;
+    font-style: italic !important;
+}
+
+.actualite-description-unique {
+    font-size: 1rem !important;
+    color: #666 !important;
+    margin-bottom: 10px !important;
+    line-height: 1.6 !important;
+    text-align: justify !important;
+    overflow: hidden !important; /* ✅ Empêche le texte de dépasser */
+    text-overflow: ellipsis !important; /* ✅ Ajoute "..." si le texte est trop long */
+    white-space: nowrap !important; /* ✅ Évite le retour à la ligne */
+    max-height: 6em !important; /* ✅ Fixe la hauteur maximale */
+    word-wrap: break-word !important;
+}
+
+.images-modal-unique {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 128, 0.8);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.images-modal-content-unique {
+    background: white !important;
+    border-radius: 10px !important;
+    padding: 20px !important;
+    width: auto !important;
+    max-width: 600px !important;
+    max-height: 90vh !important;
+    overflow-y: auto !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2) !important;
+    text-align: center !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+}
+
+#images-modal-media-unique img {
+    max-width: 100% !important;
+    height: auto !important;
+}
+
+#images-modal-description-unique {
+    font-size: 1rem !important;
+    color: #333 !important;
+    margin-top: 10px !important;
+    text-align: justify !important;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+    max-width: 100% !important;
+    white-space: normal !important;
+}
+
+.images-modal-close-btn-unique {
+    display: block;
+    margin: 20px auto 0;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.images-modal-close-btn-unique:hover {
+    background-color: #0056b3;
+}
+
+.images-modal-unique img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+
+@media (max-width: 768px) {
+    .actualites-unique {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .actualite-card-unique {
+        width: 90%;
+        max-width: 400px;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+.btn-lire-texte {
+    display: inline-block !important;
+    background-color: #007bff !important;
+    color: white !important;
+    padding: 10px 15px !important;
+    border-radius: 5px !important;
+    border: none !important;
+    font-size: 1rem !important;
+    cursor: pointer !important;
+    transition: background-color 0.3s ease-in-out !important;
+    font-weight: bold !important;
+}
+
+.btn-lire-texte:hover {
+    background-color: #0056b3 !important;
+}
+
+@media (max-width: 768px) {
+    .actualites-unique {
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+
+    .actualite-card-unique {
+        width: 90% !important;
+        max-width: 400px !important;
+    }
+}
+
+@keyframes fadeIn-unique {
+    from {
+        opacity: 0 !important;
+        transform: translateY(20px) !important;
+    }
+    to {
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+    }
+}
+
+
+
+@keyframes blink {
+    50% { border-color: transparent; }
+}
+
+
+
+.animated-container {
+    width: 100%;
+    height: 120px;
+    background: linear-gradient(135deg, #004aad 0%, #002d72 50%, #001f4d 100%); /* 🎨 Dégradé multi-nuances */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px; /* ✨ Coins légèrement arrondis pour une touche élégante */
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3); /* 🌟 Ombre plus profonde pour un effet premium */
+    padding: 15px;
+    transition: all 0.3s ease-in-out; /* 💫 Effet de transition fluide */
+}
+
+/* 🎯 Ajout d’un léger effet de brillance */
+.animated-container::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 70%);
+    opacity: 0.3;
+    pointer-events: none;
+}
+
+/* 🏆 Animation subtile sur l'affichage du titre */
+#animated-title {
+    font-size: 1.8rem; /* 🔍 Taille équilibrée */
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+    display: inline-block;
+    border-right: 3px solid white; /* ✅ Curseur clignotant */
+    animation: blink 0.7s infinite, fadeIn 1.2s ease-in-out; /* ✨ Effet de fondu fluide */
+}
+
+/* Animation de clignotement */
+@keyframes blink {
+    50% { border-color: transparent; }
+}
+
+/* Effet d’apparition en douceur */
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(-10px); }
+    100% { opacity: 1; transform: translateY(0); }
+}

@@ -1,0 +1,748 @@
+/********** Template CSS **********/
+:root {
+    --primary: #FF3E41;
+    --secondary: #51CFED;
+    --light: #F8F2F0;
+    --dark: #060315;
+}
+
+.fw-medium {
+    font-weight: 600 !important;
+}
+
+.back-to-top {
+    position: fixed;
+    display: none;
+    right: 45px;
+    bottom: 45px;
+    z-index: 99;
+}
+
+
+/*** Spinner ***/
+#spinner {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .5s ease-out, visibility 0s linear .5s;
+    z-index: 99999;
+}
+
+#spinner.show {
+    transition: opacity .5s ease-out, visibility 0s linear 0s;
+    visibility: visible;
+    opacity: 1;
+}
+
+
+/*** Button ***/
+.btn {
+    font-weight: 600;
+    transition: .5s;
+}
+
+.btn.btn-primary,
+.btn.btn-secondary {
+    color: #FFFFFF;
+}
+
+.btn-square {
+    width: 38px;
+    height: 38px;
+}
+
+.btn-sm-square {
+    width: 32px;
+    height: 32px;
+}
+
+.btn-lg-square {
+    width: 48px;
+    height: 48px;
+}
+
+.btn-square,
+.btn-sm-square,
+.btn-lg-square {
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: normal;
+}
+
+/*** Navbar ***/
+.navbar .dropdown-toggle::after {
+    border: none;
+    content: "\f107";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    vertical-align: middle;
+    margin-left: 8px;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    position: relative;
+    margin-right: 30px;
+    padding: 25px 0;
+    color: #FFFFFF;
+    font-size: 15px;
+    text-transform: uppercase;
+    outline: none;
+}
+
+.navbar-light .navbar-nav .nav-link:hover,
+.navbar-light .navbar-nav .nav-link.active {
+    color: var(--primary);
+}
+
+@media (max-width: 991.98px) {
+    .navbar-light .navbar-nav .nav-link  {
+        margin-right: 0;
+        padding: 10px 0;
+    }
+
+    .navbar-light .navbar-nav {
+        border-top: 1px solid #EEEEEE;
+    }
+}
+
+.navbar-light .navbar-brand,
+.navbar-light a.btn {
+    height: 75px;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: var(--dark);
+    font-weight: 500;
+}
+
+.navbar-light.sticky-top {
+    top: -100px;
+    transition: .5s;
+}
+
+@media (min-width: 992px) {
+    .navbar-light .navbar-nav .nav-link::before {
+        position: absolute;
+        content: "";
+        width: 0;
+        height: 5px;
+        top: -6px;
+        left: 50%;
+        background: #FFFFFF;
+        transition: .5s;
+    }
+
+    .navbar-light .navbar-nav .nav-link:hover::before,
+    .navbar-light .navbar-nav .nav-link.active::before {
+        width: 100%;
+        left: 0;
+    }
+
+    .navbar-light .navbar-nav .nav-link.nav-contact::before {
+        display: none;
+    }
+
+    .navbar .nav-item .dropdown-menu {
+        display: block;
+        border: none;
+        margin-top: 0;
+        top: 150%;
+        opacity: 0;
+        visibility: hidden;
+        transition: .5s;
+    }
+
+    .navbar .nav-item:hover .dropdown-menu {
+        top: 100%;
+        visibility: visible;
+        transition: .5s;
+        opacity: 1;
+    }
+}
+
+
+/*** Header ***/
+@media (max-width: 768px) {
+    .header-carousel .owl-carousel-item {
+        position: relative;
+        min-height: 500px;
+    }
+    
+    .header-carousel .owl-carousel-item img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .header-carousel .owl-carousel-item h5,
+    .header-carousel .owl-carousel-item p {
+        font-size: 14px !important;
+        font-weight: 400 !important;
+    }
+
+    .header-carousel .owl-carousel-item h1 {
+        font-size: 30px;
+        font-weight: 600;
+    }
+}
+
+.header-carousel .owl-nav {
+    position: absolute;
+    top: 50%;
+    right: 8%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+}
+
+.header-carousel .owl-nav .owl-prev,
+.header-carousel .owl-nav .owl-next {
+    margin: 7px 0;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFFFFF;
+    background: transparent;
+    border: 1px solid #FFFFFF;
+    border-radius: 45px;
+    font-size: 22px;
+    transition: .5s;
+}
+
+.header-carousel .owl-nav .owl-prev:hover,
+.header-carousel .owl-nav .owl-next:hover {
+    background: var(--primary);
+    border-color: var(--primary);
+}
+
+.page-header {
+    background: linear-gradient(rgba(6, 3, 21, .5), rgba(6, 3, 21, .5)), url(../img/propos1\ \(2\).jpg) center center no-repeat;
+    background-size: cover;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+    color: var(--light);
+}
+
+
+/*** About ***/
+@media (min-width: 992px) {
+    .container.about {
+        max-width: 100% !important;
+    }
+
+    .about-text  {
+        padding-right: calc(((100% - 960px) / 2) + .75rem);
+    }
+}
+
+@media (min-width: 1200px) {
+    .about-text  {
+        padding-right: calc(((100% - 1140px) / 2) + .75rem);
+    }
+}
+
+@media (min-width: 1400px) {
+    .about-text  {
+        padding-right: calc(((100% - 1320px) / 2) + .75rem);
+    }
+}
+
+/* Style pour centrer et agrandir le texte avec un effet au survol */
+.professional-title {
+    font-size: 30px; /* Taille de police agrandie */
+    font-weight: bold; /* Texte en gras */
+    text-align: center; /* Centre le texte horizontalement */
+    position: relative; /* Nécessaire pour l'effet de la barre */
+    color: #333; /* Couleur initiale du texte */
+    cursor: pointer; /* Change le curseur au survol */
+    margin: 20px 0; /* Espacement autour du titre */
+    transition: color 0.3s ease; /* Animation fluide sur la couleur */
+}
+
+/* Barre bleue courte au survol */
+.professional-title:hover::after {
+    content: ""; /* Crée un élément vide pour la barre */
+    position: absolute; /* Position relative au texte */
+    
+    left: 50%; /* Point de départ au centre */
+    transform: translateX(-50%); /* Centre horizontalement */
+    width: 50%; /* Longueur réduite de la barre (50% de la largeur du texte) */
+    height: 3px; /* Épaisseur de la barre */
+    background-color: blue; /* Couleur bleue pour la barre */
+    transition: width 0.3s ease; /* Animation fluide */
+}
+
+/* Effet au survol sur le texte */
+.professional-title:hover {
+    color: blue; /* Change la couleur du texte au survol */
+}
+
+.justified-text {
+    text-align: justify; /* Aligne le texte à gauche et à droite */
+    line-height: 1.8; /* Augmente l'espacement entre les lignes pour faciliter la lecture */
+    font-size: 16px; /* Taille de police optimale */
+    margin: 0; /* Supprime tout espace inutile autour */
+    word-wrap: break-word; /* Empêche le débordement du texte */
+}
+
+/* Conteneur pour l'image */
+.styled-image-container {
+    position: relative;
+    height: 100%; /* Assure une hauteur complète */
+    border-radius: 10px; /* Coins arrondis pour un look moderne */
+    overflow: hidden; /* Empêche tout débordement de l'image */
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.3); /* Ombre subtile pour donner de la profondeur */
+}
+
+/* Image professionnelle */
+.styled-image {
+    position: absolute; /* Positionne l'image correctement */
+    width: 100%; /* Utilise toute la largeur du conteneur */
+    height: 100%; /* Utilise toute la hauteur du conteneur */
+    object-fit: cover; /* Maintient les proportions tout en remplissant le conteneur */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animation fluide au survol */
+}
+
+/* Effet au survol */
+.styled-image:hover {
+    transform: scale(1.05); /* Zoom léger au survol */
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.4); /* Ombre plus prononcée au survol */
+}
+
+/* Style pour le titre "NOS MISSIONS" */
+.professional-title {
+    font-size: 28px; /* Taille de police adaptée pour le titre */
+    font-weight: bold; /* Texte en gras pour une mise en évidence */
+    text-align: center; /* Centre le titre horizontalement */
+    color: #333; /* Couleur professionnelle */
+    margin-bottom: 20px; /* Espacement en dessous du titre */
+}
+
+/* Liste des missions */
+/* Conteneur principal */
+.missions-section {
+    text-align: center; /* Centre tout le contenu */
+    padding: 20px; /* Ajoute un espace autour du contenu */
+}
+
+/* Titre de la section */
+.professional-title {
+    font-size: 28px; /* Taille de police agrandie */
+    font-weight: bold; /* Texte en gras */
+    color: #333; /* Couleur professionnelle pour le texte */
+    margin-bottom: 20px; /* Espacement en dessous du titre */
+    position: relative; /* Nécessaire pour la barre décorative */
+}
+
+/* Barre décorative sous le titre */
+.professional-title::after {
+    content: ""; /* Élément décoratif vide */
+    position: absolute;
+    bottom: -1px; /* Place la barre juste en dessous du texte */
+    left: 50%; /* Centrage horizontal */
+    transform: translateX(-50%);
+   
+    border-radius: 2px; /* Coins légèrement arrondis */
+}
+
+/* Liste des missions */
+/* Conteneur principal */
+.missions-section {
+    text-align: center;
+    padding: 20px;
+    margin: 0 auto;
+}
+
+/* Titre avec animation */
+.professional-title {
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+    position: relative;
+    animation: fadeIn 1s ease-in-out; /* Animation d'apparition */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Liste des missions */
+/* Conteneur principal pour les missions */
+.missions-section {
+    background-color: #f9f9f9; /* Couleur d'arrière-plan douce */
+    padding: 30px; /* Ajoute de l'espace interne */
+    margin: 0; /* Supprime les marges externes pour occuper toute la largeur */
+    width: 100%; /* Le conteneur prend toute la largeur de la page */
+    border-radius: 0; /* Supprime les coins arrondis pour un rendu plat */
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2); /* Ombre subtile pour ajouter de la profondeur */
+    text-align: center; /* Centre le contenu horizontalement */
+}
+
+/* Titre des missions */
+.missions-title {
+    font-size: 28px; /* Taille de police adaptée */
+    font-weight: bold; /* Texte en gras */
+    color: #333; /* Couleur sombre professionnelle */
+    margin-bottom: 20px; /* Espacement sous le titre */
+    position: relative; /* Nécessaire pour la barre décorative */
+    display: inline-block; /* Permet de centrer le titre au survol */
+    cursor: pointer; /* Change le curseur au survol */
+    transition: color 0.3s ease; /* Animation fluide pour la couleur */
+}
+
+/* Barre bleue décorative au survol */
+.missions-title::after {
+    content: ""; /* Élément vide pour la barre */
+    position: absolute;
+    bottom: -5px; /* Place la barre sous le texte */
+    left: 50%; /* Centrage horizontal */
+    transform: translateX(-50%);
+    width: 0; /* Initialement invisible */
+    height: 4px; /* Épaisseur de la barre */
+    background-color: #007bff; /* Couleur bleue professionnelle */
+    border-radius: 2px; /* Coins arrondis pour la barre */
+    transition: width 0.3s ease; /* Animation fluide pour l'apparition de la barre */
+}
+
+/* Effet au survol */
+.missions-title:hover::after {
+    width: 60px; /* La barre apparaît uniquement au survol */
+}
+
+.missions-title:hover {
+    color: #007bff; /* Change la couleur du texte au survol */
+}
+
+/* Liste des missions */
+.missions-list {
+    list-style-type: none; /* Supprime les puces par défaut */
+    padding: 0; /* Supprime le remplissage interne */
+    margin: 0 auto; /* Centre la liste horizontalement */
+    text-align: left; /* Aligne le texte à gauche */
+}
+
+/* Élément individuel des missions */
+.missions-list li {
+    font-size: 18px; /* Taille optimale pour le texte */
+    color: #555; /* Couleur subtile et élégante */
+    margin-bottom: 10px; /* Espacement entre chaque mission */
+    position: relative; /* Nécessaire pour ajouter des icônes */
+    padding-left: 30px; /* Décalage pour les icônes */
+}
+
+/* Icônes décoratives pour les missions */
+.missions-list li::before {
+    content: "✔"; /* Icône en forme de coche */
+    position: absolute; /* Place l'icône à gauche */
+    left: 0; /* Aligne l'icône à gauche */
+    font-size: 18px; /* Taille de l'icône */
+    color: #007bff; /* Couleur bleue pour l'icône */
+}
+
+
+/* Conteneur principal pour la section Vision */
+/* Conteneur principal pour la section Vision */
+.vision-section {
+    margin-top: 50px; /* Espace supplémentaire au-dessus du conteneur */
+    margin-left: 0; /* Enlève les marges à gauche */
+    margin-right: 0; /* Enlève les marges à droite */
+    background-color: #f9f9f9; /* Couleur d'arrière-plan douce */
+    padding: 30px; /* Ajoute de l'espace interne */
+    width: 100%; /* S'assure que le conteneur utilise toute la largeur */
+    border-radius: 0; /* Enlève les coins arrondis si nécessaire */
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2); /* Ombre subtile */
+    text-align: center; /* Centre le contenu horizontalement */
+}
+
+
+/* Titre de la Vision */
+.vision-title {
+    font-size: 24px; /* Taille de police plus grande pour le titre */
+    font-weight: bold; /* Met le titre en évidence */
+    color: #333; /* Couleur sombre professionnelle */
+    margin-bottom: 15px; /* Espacement sous le titre */
+    position: relative; /* Nécessaire pour la barre décorative */
+}
+
+
+/* Texte de la Vision */
+.vision-text {
+    font-size: 18px; /* Taille de police adaptée */
+    line-height: 1.8; /* Espacement entre les lignes */
+    color: #555; /* Couleur subtile pour le texte */
+    margin: 0; /* Supprime les marges externes */
+    margin-top: 20px; /* Ajoute de l'espace au-dessus du texte */
+}
+
+
+
+.animated-title-container {
+    text-align: center;
+    position: relative;
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+.animated-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333; /* Couleur initiale du texte */
+    margin-bottom: 5px;
+    cursor: pointer;
+    transition: color 0.5s ease; /* Transition pour le changement de couleur */
+}
+
+.animated-bar {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 4px;
+    background-color: #007bff; /* Couleur de la barre */
+    transition: width 0.5s ease, left 0.5s ease; /* Animation de la barre */
+}
+
+.animated-title-container:hover .animated-bar {
+    width: 100%;
+    left: 0; /* La barre s'étend complètement */
+}
+
+.animated-title-container:hover .animated-title {
+    color: #007bff; /* Le texte prend la couleur de la barre */
+}
+
+
+/*** Feature ***/
+@media (min-width: 992px) {
+    .container.feature {
+        max-width: 100% !important;
+    }
+
+    .feature-text  {
+        padding-left: calc(((100% - 960px) / 2) + .75rem);
+    }
+}
+
+@media (min-width: 1200px) {
+    .feature-text  {
+        padding-left: calc(((100% - 1140px) / 2) + .75rem);
+    }
+}
+
+@media (min-width: 1400px) {
+    .feature-text  {
+        padding-left: calc(((100% - 1320px) / 2) + .75rem);
+    }
+}
+
+
+/*** Service, Price & Team ***/
+.service-item,
+.price-item,
+.team-item {
+    box-shadow: 0 0 45px rgba(0, 0, 0, .07);
+}
+
+.service-item img,
+.team-item img {
+    transition: .5s;
+}
+
+.service-item:hover img,
+.team-item:hover img {
+    transform: scale(1.1);
+}
+
+.service-item a.btn-slide,
+.price-item a.btn-slide,
+.team-item div.btn-slide {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    font-size: 0;
+}
+
+.service-item a.btn-slide i,
+.service-item a.btn-slide span,
+.price-item a.btn-slide i,
+.price-item a.btn-slide span,
+.team-item div.btn-slide i,
+.team-item div.btn-slide span {
+    position: relative;
+    height: 40px;
+    padding: 0 15px;
+    display: inline-flex;
+    align-items: center;
+    font-size: 16px;
+    color: #FFFFFF;
+    background: var(--primary);
+    border-radius: 0 35px 35px 0;
+    transition: .5s;
+    z-index: 2;
+}
+
+.team-item div.btn-slide span a i {
+    padding: 0 10px;
+}
+
+.team-item div.btn-slide span a:hover i {
+    background: var(--secondary);
+}
+
+.service-item a.btn-slide span,
+.price-item a.btn-slide span,
+.team-item div.btn-slide span {
+    padding-left: 0;
+    left: -100%;
+    z-index: 1;
+}
+
+.service-item:hover a.btn-slide i,
+.price-item:hover a.btn-slide i,
+.team-item:hover div.btn-slide i {
+    border-radius: 0;
+}
+
+.service-item:hover a.btn-slide span,
+.price-item:hover a.btn-slide span,
+.team-item:hover div.btn-slide span {
+    left: 0;
+}
+
+.service-item a.btn-slide:hover i,
+.service-item a.btn-slide:hover span,
+.price-item a.btn-slide:hover i,
+.price-item a.btn-slide:hover span {
+    background: var(--secondary);
+}
+
+
+/*** Testimonial ***/
+.testimonial-carousel .owl-item .testimonial-item {
+    position: relative;
+    transition: .5s;
+}
+
+.testimonial-carousel .owl-item.center .testimonial-item {
+    box-shadow: 0 0 45px rgba(0, 0, 0, .08);
+    animation: pulse 1s ease-out .5s;
+}
+
+.testimonial-carousel .owl-dots {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.testimonial-carousel .owl-dot {
+    position: relative;
+    display: inline-block;
+    margin: 0 5px;
+    width: 15px;
+    height: 15px;
+    background: var(--primary);
+    border: 5px solid var(--light);
+    border-radius: 15px;
+    transition: .5s;
+}
+
+.testimonial-carousel .owl-dot.active {
+    background: var(--light);
+    border-color: var(--primary);
+}
+
+
+/*** Contact ***/
+@media (min-width: 992px) {
+    .container.contact-page {
+        max-width: 100% !important;
+    }
+
+    .contact-page .contact-form  {
+        padding-left: calc(((100% - 960px) / 2) + .75rem);
+    }
+}
+
+@media (min-width: 1200px) {
+    .contact-page .contact-form  {
+        padding-left: calc(((100% - 1140px) / 2) + .75rem);
+    }
+}
+
+@media (min-width: 1400px) {
+    .contact-page .contact-form  {
+        padding-left: calc(((100% - 1320px) / 2) + .75rem);
+    }
+}
+
+
+/*** Footer ***/
+.footer {
+    background: linear-gradient(rgba(6, 3, 21, .5), rgba(6, 3, 21, .5)), url(../img/map.png) center center no-repeat;
+    background-size: cover;
+}
+
+.footer .btn.btn-social {
+    margin-right: 5px;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--light);
+    border: 1px solid #FFFFFF;
+    border-radius: 35px;
+    transition: .3s;
+}
+
+.footer .btn.btn-social:hover {
+    color: var(--primary);
+}
+
+.footer .btn.btn-link {
+    display: block;
+    margin-bottom: 5px;
+    padding: 0;
+    text-align: left;
+    color: #FFFFFF;
+    font-size: 15px;
+    font-weight: normal;
+    text-transform: capitalize;
+    transition: .3s;
+}
+
+.footer .btn.btn-link::before {
+    position: relative;
+    content: "\f105";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    margin-right: 10px;
+}
+
+.footer .btn.btn-link:hover {
+    letter-spacing: 1px;
+    box-shadow: none;
+}
+
+.footer .copyright {
+    padding: 25px 0;
+    font-size: 15px;
+    border-top: 1px solid rgba(256, 256, 256, .1);
+}
+
+.footer .copyright a {
+    color: var(--light);
+}

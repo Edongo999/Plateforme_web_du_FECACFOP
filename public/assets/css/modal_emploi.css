@@ -1,0 +1,85 @@
+           /* ✅ Styles pour les modals */
+.custom-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.custom-modal-content {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+/* ✅ Style des boutons */
+.custom-btn {
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    border: none;
+}
+
+.custom-btn-primary {
+    background-color: #007bff;
+    color: white;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.custom-btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.custom-modal-close-btn {
+    background-color: #f44336;
+    color: white;
+}
+
+.custom-modal-close-btn:hover {
+    background-color: #d32f2f;
+}
+
+/* ✅ Formulaire */
+.custom-form-group {
+    margin-bottom: 15px;
+}
+
+.custom-form-group label {
+    font-weight: bold;
+    display: block;
+}
+
+.custom-form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.custom-form-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* ✅ Message */
+.custom-message {
+    margin-top: 10px;
+    color: blue;
+}
+
+/* ✅ Confirmation Modal */
+.custom-confirmation-modal .custom-modal-content {
+    width: 80%;
+    max-width: 400px;
+}
